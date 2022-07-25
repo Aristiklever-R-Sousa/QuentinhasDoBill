@@ -3,17 +3,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QuentinhasDoBill.Models
 {
+    [Table("quentinhas")]
     public class Quentinha
     {
-
         [Column("id")]
-        private int Id;
+        private int id;
 
-        [Required]
         [MaxLength(128)]
         private string description;
 
-        [Required]
         private double price;
 
         public Quentinha(){}
@@ -22,6 +20,7 @@ namespace QuentinhasDoBill.Models
             this.price = price;
         }
 
+        public int Id { get; set; }
         public string Description
         {
             get { return description; }

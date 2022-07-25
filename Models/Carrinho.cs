@@ -4,12 +4,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QuentinhasDoBill.Models
 {
+    [Table("carrinho")]
     public class Carrinho
     {
         [Column("id")]
-        private int Id;
+        private int id;
 
-        [Required]
         private ICollection<Quentinha>? quentinhas;
 
         public Carrinho() { }
@@ -18,6 +18,10 @@ namespace QuentinhasDoBill.Models
             this.quentinhas.Add(value);
         }
 
+        public int Id {
+            get { return id; }
+            set { id = value; }
+        }
         public ICollection<Quentinha> Quentinhas
         {
             get { return quentinhas; }

@@ -4,15 +4,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QuentinhasDoBill.Models
 {
+    [Table("pedidos")]
     public class Pedido
     {
         [Column("id")]
-        private int Id;
+        private int id;
 
-        [Required]
         private char canceled;
 
-        [Required]
         private ICollection<ItemPedido> itens;
 
         public Pedido() { }
@@ -21,6 +20,10 @@ namespace QuentinhasDoBill.Models
             this.canceled = value;
         }
 
+        public int Id {
+            get { return id; }
+            set { id = value; }
+        }
         public char Canceled
         {
             get { return canceled; }

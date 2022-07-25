@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QuentinhasDoBill.Models
 {
+    [Table("tipos")]
     public class Tipo
     {
         [Column("id")]
-        private int Id;
+        private int id;
 
         [Required]
         private string description;
@@ -20,7 +21,10 @@ namespace QuentinhasDoBill.Models
             this.description = description;
             this.quentinhas.Add(quentinha);
         }
-
+        public int Id {
+            get { return id; }
+            set { id = value; }
+        }
         public string Description
         {
             get { return description; }

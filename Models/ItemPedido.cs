@@ -5,18 +5,22 @@ using System.Threading.Tasks;
 
 namespace QuentinhasDoBill.Models
 {
+    [Table("itens_pedido")]
     public class ItemPedido
     {
         [Column("id")]
-        private int Id;
+        private int id;
 
-        [Required]
         private Quentinha quentinha;
         
         public ItemPedido() { }
         public ItemPedido(Quentinha quentinha)
         {
             this.quentinha = quentinha;
+        }
+        public int Id {
+            get { return id; }
+            set { id = value; }
         }
         public Quentinha Quentinha
         {
