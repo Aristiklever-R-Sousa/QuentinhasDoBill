@@ -10,26 +10,26 @@ namespace QuentinhasDoBill.Models
         [Column("id")]
         private int id;
 
-        private ICollection<Quentinha>? quentinhas;
+        private ICollection<ItemCarrinho>? itens;
 
         public Carrinho() { }
-        public Carrinho(Quentinha value)
+        public Carrinho(ItemCarrinho value)
         {
-            this.quentinhas.Add(value);
+            this.itens.Add(value);
         }
 
         public int Id {
             get { return id; }
             set { id = value; }
         }
-        public ICollection<Quentinha> Quentinhas
+        public ICollection<ItemCarrinho> Itens
         {
-            get { return quentinhas; }
+            get { return itens; }
         }
 
-        public void SetQuentinha(Quentinha value)
+        public void SetQuentinha(ItemCarrinho value)
         {
-            quentinhas.Add(value);
+            itens.Add(value);
         }
     }
 }

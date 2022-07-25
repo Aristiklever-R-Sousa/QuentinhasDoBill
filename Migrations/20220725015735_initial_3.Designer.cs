@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QuentinhasDoBill.Data;
 
@@ -11,9 +12,10 @@ using QuentinhasDoBill.Data;
 namespace QuentinhasDoBill.Migrations
 {
     [DbContext(typeof(QuentinhasDoBillContext))]
-    partial class QuentinhasDoBillContextModelSnapshot : ModelSnapshot
+    [Migration("20220725015735_initial_3")]
+    partial class initial_3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

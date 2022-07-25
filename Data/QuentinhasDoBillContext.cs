@@ -15,8 +15,9 @@ namespace QuentinhasDoBill.Data
         public DbSet<Quentinha>? Quentinhas { get; set; }
         public DbSet<Tipo>? Tipos { get; set; }
         public DbSet<Carrinho>? Carrinho { get; set; }
+        public DbSet<ItemCarrinho>? ItensCarrinho { get; set; }
         public DbSet<Pedido>? Pedidos { get; set; }
-        public DbSet<ItemPedido>? Itens_pedido { get; set; }
+        public DbSet<ItemPedido>? ItensPedido { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -36,6 +37,10 @@ namespace QuentinhasDoBill.Data
             modelBuilder.Entity<Carrinho>()
                 .HasKey(e => e.Id)
                 .HasName("PrimaryKey_CarrinhoId");
+
+            modelBuilder.Entity<ItemCarrinho>()
+                .HasKey(e => e.Id)
+                .HasName("PrimaryKey_ItemCarrinhoId");
 
             modelBuilder.Entity<Pedido>()
                 .HasKey(e => e.Id)

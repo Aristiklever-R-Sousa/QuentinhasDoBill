@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QuentinhasDoBill.Data;
 
@@ -11,9 +12,10 @@ using QuentinhasDoBill.Data;
 namespace QuentinhasDoBill.Migrations
 {
     [DbContext(typeof(QuentinhasDoBillContext))]
-    partial class QuentinhasDoBillContextModelSnapshot : ModelSnapshot
+    [Migration("20220725015119_initial_2")]
+    partial class initial_2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,9 +49,6 @@ namespace QuentinhasDoBill.Migrations
                     b.Property<int?>("CarrinhoId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
                     b.Property<int>("QuentinhaId")
                         .HasColumnType("int");
 
@@ -72,9 +71,6 @@ namespace QuentinhasDoBill.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int?>("PedidoId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantity")
                         .HasColumnType("int");
 
                     b.Property<int>("QuentinhaId")

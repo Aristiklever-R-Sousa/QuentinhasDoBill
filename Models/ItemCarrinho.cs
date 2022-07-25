@@ -1,25 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace QuentinhasDoBill.Models
 {
-    [Table("itens_pedido")]
-    public class ItemPedido
+    [Table("itens_carrinho")]
+    public class ItemCarrinho
     {
-        [Column("id")]
         private int id;
-
         private Quentinha quentinha;
-
         private int quantity;
-        
-        public ItemPedido() { }
-        public ItemPedido(Quentinha quentinha)
-        {
-            this.quentinha = quentinha;
-        }
+        private TimestampAttribute created_at;
+        private TimestampAttribute updated_at;
+
         public int Id {
             get { return id; }
             set { id = value; }
@@ -29,11 +21,11 @@ namespace QuentinhasDoBill.Models
             get { return quentinha; }
             set { quentinha = value; }
         }
-
         public int Quantity
         {
             get { return quantity; }
             set { quantity = value; }
         }
+
     }
 }
